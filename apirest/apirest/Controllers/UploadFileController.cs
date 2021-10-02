@@ -19,9 +19,11 @@ namespace apirest.Controllers
       var memoryStream = new MemoryStream();
       file.CopyTo(memoryStream);
 
+      string fileName = $"{Guid.NewGuid()}-{file.FileName}";
+
       return new UploadFileDto
       {
-        FileUrl = await s3.Upload(file.FileName, memoryStream)
+        FileUrl = await s3.Upload(fileName, memoryStream)
       };
     }
   }
