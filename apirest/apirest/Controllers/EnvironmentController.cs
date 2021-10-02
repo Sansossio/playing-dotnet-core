@@ -13,7 +13,7 @@ namespace apirest.Controllers
       var environment = Environment.GetEnvironmentVariable(name);
       if (environment == null)
       {
-        environment = "NOT FOUND";
+        environment = null;
       }
       return new GetEnvironmentDto { Name = name, Value = environment };
     }
