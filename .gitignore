@@ -53,3 +53,6 @@ node_modules/
 *.pid
 *.seed
 *.swp
+
+# Environment variables
+.env
