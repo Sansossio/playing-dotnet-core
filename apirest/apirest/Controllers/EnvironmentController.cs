@@ -10,12 +10,7 @@ namespace apirest.Controllers
     [HttpGet("{name}")]
     public GetEnvironmentDto Get(string name)
     {
-      var environment = Environment.GetEnvironmentVariable(name);
-      if (environment == null)
-      {
-        environment = null;
-      }
-      return new GetEnvironmentDto { Name = name, Value = environment };
+      return new GetEnvironmentDto { Name = name, Value = Environment.GetEnvironmentVariable(name) };
     }
   }
 }
